@@ -6,15 +6,15 @@ const fixture = [
  {id:'c',name:'USJ',category:'관광',area:'USJ·베이 에어리어',lat:34.66,lng:135.43},
  {id:'d',name:'호텔',category:'호텔',area:'난바',lat:34.66,lng:135.50}
 ];
-test('initial bounds omit bay while explicit filters and full range include it', async () => {
- const {viewportPlaces,placeLinks} = await import('../core.mjs');
- assert.equal(viewportPlaces(fixture,{},false).length,3);
- assert.equal(viewportPlaces(fixture,{},true).length,4);
- assert.equal(viewportPlaces([fixture[2]],{area:'USJ·베이 에어리어'},false)[0].id,'c');
+test('single safe Google Maps link preserves source or falls back to search', async () => {
+ const {placeLinks} = await import('../core.mjs');
  const links=placeLinks({...fixture[0],mapsUrl:'javascript:alert(1)'});
+ assert.deepEqual(Object.keys(links),['place']);
  assert.ok(links.place.startsWith('https://www.google.com/maps/search/'));
- assert.ok(links.directions.includes('destination=34.66%2C135.5'));
  assert.equal(placeLinks({...fixture[0],mapsUrl:'https://maps.app.goo.gl/example'}).place,'https://maps.app.goo.gl/example');
+ for(const mapsUrl of ['https://evil.example/maps','http://www.google.com/maps','not a URL']){
+  assert.ok(placeLinks({...fixture[0],mapsUrl}).place.startsWith('https://www.google.com/maps/search/'));
+ }
 });
 test('facet counts honor search and area but not selected category', async () => {
  const {categoryCounts,CATEGORIES} = await import('../core.mjs');

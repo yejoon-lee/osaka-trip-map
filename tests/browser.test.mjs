@@ -5,116 +5,104 @@ import {readFile,mkdir} from 'node:fs/promises';
 import {resolve,extname} from 'node:path';
 import {chromium} from '../.test-tools/node_modules/playwright/index.mjs';
 const root=resolve(import.meta.dirname,'..');
-const places=[{id:'a',name:'테스트 라멘',originalName:'Ramen',category:'음식',area:'난바',kind:'라멘',note:'<img src=x onerror=alert(1)>',lat:34.66,lng:135.50},{id:'h',name:'테스트 호텔',category:'호텔',area:'난바',lat:34.66,lng:135.50},{id:'u',name:'USJ',category:'관광',area:'USJ·베이 에어리어',lat:34.665,lng:135.43}];
+const data=JSON.parse(await readFile(resolve(root,'places.json'),'utf8'));
+const totals={'음식':39,'카페·디저트':9,'쇼핑':13,'관광':7,'호텔':1,'편의·서비스':8};
 async function serve(){
  const server=createServer(async(req,res)=>{try{const path=resolve(root,'.'+(req.url==='/'?'/index.html':req.url.split('?')[0]));if(!path.startsWith(root+'/'))throw Error();res.setHeader('Content-Type',({'.html':'text/html','.js':'text/javascript','.mjs':'text/javascript','.css':'text/css','.json':'application/json'})[extname(path)]||'application/octet-stream');res.end(await readFile(path));}catch{res.statusCode=404;res.end('Not found');}});
  await new Promise(r=>server.listen(0,'127.0.0.1',r));return {server,url:`http://127.0.0.1:${server.address().port}`};
 }
-test('browser: exclusive full-height map/list tabs at every viewport',async()=>{
- const {server,url}=await serve();const browser=await chromium.launch();
- try{for(const [width,height] of [[360,800],[390,844],[412,915],[844,390],[1440,844]]){
-  const page=await browser.newPage({viewport:{width,height}});
+async function withBrowser(run){
+ const {server,url}=await serve();let browser;
+ try{browser=await chromium.launch();await run(browser,url);}finally{await browser?.close();await new Promise(r=>server.close(r));}
+}
+test('browser: list-only grouped snapshot, document scroll and no map requests at all viewports',()=>withBrowser(async(browser,url)=>{
+ await mkdir(resolve(root,'test-results'),{recursive:true});
+ for(const [width,height] of [[360,800],[390,844],[844,390],[1440,844]]){
+  const page=await browser.newPage({viewport:{width,height}});const requests=[],errors=[];
+  page.on('request',r=>requests.push(r.url()));page.on('pageerror',e=>errors.push(e.message));
+  await page.addInitScript(()=>{window.geoCalls=0;navigator.geolocation.getCurrentPosition=()=>window.geoCalls++;navigator.geolocation.watchPosition=()=>window.geoCalls++;});
   await page.goto(url);await page.waitForFunction(()=>document.querySelectorAll('.place-card').length===77);
-  assert.equal(await page.locator('#results').isVisible(),false,'list must be hidden by default');
-  const map=await page.locator('#map').boundingBox();
-  assert.ok(map.width>=width-2,'map uses full width');
-  assert.ok(map.height>=height*(height<500?.43:.58),'map keeps useful height');
-  assert.equal(await page.evaluate(()=>document.documentElement.scrollHeight<=innerHeight && document.documentElement.scrollWidth<=innerWidth),true);
-  for(const id of ['map-tab','list-tab'])assert.ok((await page.locator('#'+id).boundingBox()).height>=44);
-  await page.locator('#list-tab').click();
-  assert.equal(await page.locator('#results').isVisible(),true);
-  assert.equal(await page.locator('.map-panel').isVisible(),false);
-  assert.equal(await page.locator('#list-tab').getAttribute('aria-selected'),'true');
-  assert.equal(await page.locator('#results').evaluate(el=>el.scrollHeight>el.clientHeight && getComputedStyle(el).overflowY==='auto'),true);
-  await page.locator('#map-tab').click();
-  assert.equal(await page.locator('#results').isVisible(),false);
-  assert.equal(await page.locator('#map-tab').getAttribute('aria-selected'),'true');
-  await page.close();
- }}finally{await browser.close();await new Promise(r=>server.close(r));}
-});
-test('browser: list selection opens map and popup returns to highlighted card',async()=>{
- const {server,url}=await serve();const browser=await chromium.launch();
- try{for(const width of [390,1440]){
-  const page=await browser.newPage({viewport:{width,height:844}});
-  await page.goto(url);await page.waitForFunction(()=>document.querySelectorAll('.place-card').length===77);
-  await page.locator('#list-tab').click();
-  const card=page.locator('.place-card').nth(50);
-  const id=await card.getAttribute('data-id');
-  await card.locator('.place-title').click();
-  assert.equal(await page.locator('#results').isVisible(),false,'selection switches to map');
-  await page.waitForSelector('.leaflet-popup-content');
-  await page.locator('#list-tab').click();
-  await page.locator('#results').evaluate(el=>el.scrollTop=0);
-  await page.locator('#map-tab').click();
-  await page.locator('.popup-list').click();
-  assert.equal(await page.locator('#results').isVisible(),true);
-  assert.equal(await page.locator('.map-panel').isVisible(),false);
-  const selected=page.locator('.place-card[data-selected=true]');
-  assert.equal(await selected.getAttribute('data-id'),id);
-  assert.equal(await selected.locator('button').evaluate(el=>el===document.activeElement),true);
-  assert.equal(await selected.evaluate(el=>{const r=el.getBoundingClientRect(),list=document.querySelector('#results').getBoundingClientRect(),heading=document.querySelector('.results-heading').getBoundingClientRect();return r.top>=heading.bottom-1 && r.top<list.bottom;}),true);
-  assert.equal(await page.evaluate(()=>scrollY),0);
-  assert.equal(await page.locator('.place-card').count(),77);
-  await page.close();
- }}finally{await browser.close();await new Promise(r=>server.close(r));}
-});
-test('browser: supplied snapshot renders 77 cards at both viewports without horizontal overflow',async()=>{
- const {server,url}=await serve();const browser=await chromium.launch();
- try {await mkdir(resolve(root,'test-results'),{recursive:true});
- for(const width of [390,1440]){
- const page=await browser.newPage({viewport:{width,height:844}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
- await page.goto(url);await page.waitForFunction(()=>document.querySelectorAll('.place-card').length===77);
- assert.equal(await page.locator('#count').textContent(),'77');
- assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
- assert.equal(await page.locator('.leaflet-container').count(),1);
- await page.waitForFunction(()=>{const tiles=[...document.querySelectorAll('.leaflet-tile')];return tiles.length>0 && tiles.every(tile=>tile.complete && tile.naturalWidth>0 && tile.classList.contains('leaflet-tile-loaded'));},{},{timeout:20000});
- console.log(`Loaded real map tiles at ${width}px:`,await page.locator('.leaflet-tile-loaded').count());
- await page.screenshot({path:resolve(root,`test-results/osaka-${width}.png`)});
- assert.deepEqual(errors,[]);await page.close();
+  assert.equal(await page.locator('#results').isVisible(),true,'list must be visible by default');
+  assert.equal(await page.title(),'오사카 장소 목록');
+  assert.equal(await page.locator('#map, .leaflet-container, [role=tab], [role=tablist], #locate, #hotel').count(),0);
+  assert.equal(await page.locator('link[href="styles.css?v=3"]').count(),1);
+  assert.equal(await page.locator('script[src="app.js?v=3"]').count(),1);
+  assert.equal(await page.locator('#count').textContent(),'77');
+  assert.equal(await page.locator('.category-group').count(),6);
+  for(const [category,count] of Object.entries(totals)){
+   const group=page.locator('.category-group').filter({has:page.getByRole('heading',{name:`${category} ${count}`,exact:true})});
+   assert.equal(await group.locator('.place-card').count(),count);
+  }
+  assert.deepEqual((await page.locator('.place-card').evaluateAll(els=>els.map(el=>el.dataset.id))).sort(),data.places.map(p=>p.id).sort());
+  const links=await page.locator('.place-card').evaluateAll(cards=>cards.map(card=>({count:card.querySelectorAll('a').length,href:card.querySelector('a')?.href,target:card.querySelector('a')?.target,rel:card.querySelector('a')?.rel,height:card.querySelector('a')?.getBoundingClientRect().height,buttons:card.querySelectorAll('button').length})));
+  for(const link of links){assert.equal(link.count,1);assert.match(link.href,/^https:\/\/www\.google\.com\/maps\?cid=\d+$/);assert.equal(link.target,'_blank');assert.match(link.rel,/noopener/);assert.ok(link.height>=44);assert.equal(link.buttons,0);}
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'no horizontal overflow');
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollHeight>innerHeight),true,'normal long document');
+  assert.equal(await page.locator('#results').evaluate(el=>getComputedStyle(el).overflowY),'visible');
+  assert.equal(await page.locator('header').evaluate(el=>getComputedStyle(el).position),'static');
+  await page.locator('.place-card').last().scrollIntoViewIfNeeded();assert.ok(await page.evaluate(()=>scrollY)>0);
+  assert.equal(await page.locator('.place-card').last().isVisible(),true);
+  await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:resolve(root,`test-results/list-${width}.png`)});
+  assert.equal(await page.evaluate(()=>window.geoCalls),0);
+  assert.deepEqual(requests.filter(r=>!r.startsWith(url+'/')),[],'no external requests');
+  assert.deepEqual(requests.filter(r=>/vendor|leaflet|tile|openstreetmap/i.test(r)),[]);
+  assert.deepEqual(errors,[]);await page.close();
  }
- }finally{await browser.close();await new Promise(r=>server.close(r));}
-});
-test('browser: real Leaflet clusters, card popup, selection keeps filters, USJ and explicit geolocation',async()=>{
- const {server,url}=await serve();const browser=await chromium.launch();
- try{const page=await browser.newPage({viewport:{width:390,height:844}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
- await page.route('**/places.json',r=>r.fulfill({json:{sourceCount:3,places}}));
- await page.route('**/tile.openstreetmap.org/**',r=>r.abort());
- await page.addInitScript(()=>{window.geoCalls=0;navigator.geolocation.getCurrentPosition=()=>window.geoCalls++;});
- await page.goto(url);await page.waitForSelector('.marker-cluster',{timeout:3000});
- assert.equal(await page.evaluate(()=>window.geoCalls),0);
- await page.locator('#list-tab').click();await page.locator('.place-title').first().click();await page.waitForSelector('.leaflet-popup-content');
- assert.match(await page.locator('.leaflet-popup-content').textContent(),/테스트 라멘/);
- assert.equal(await page.locator('.place-card').count(),3);
- assert.equal(await page.locator('.leaflet-popup-content img').count(),0);
- await page.locator('.leaflet-popup-close-button').click();
- await page.locator('#area').selectOption('USJ·베이 에어리어');
- await page.locator('#list-tab').click();await page.locator('.place-title').click();await page.waitForSelector('.leaflet-popup-content');
- assert.match(await page.locator('.leaflet-popup-content').textContent(),/USJ/);
- assert.equal(await page.locator('#area').inputValue(),'USJ·베이 에어리어');
- await page.locator('#locate').click();assert.equal(await page.evaluate(()=>window.geoCalls),1);
- assert.deepEqual(errors,[]);
- }finally{await browser.close();await new Promise(r=>server.close(r));}
-});
-test('browser: mobile/desktop filters, safe text, zero state and map failure retain usable list',async()=>{
- const {server,url}=await serve(); const browser=await chromium.launch();
- try{for(const width of [390,1440]){
- const page=await browser.newPage({viewport:{width,height:844}}); const errors=[];page.on('pageerror',e=>errors.push(e.message));
- await page.route('**/places.json',r=>r.fulfill({json:{sourceCount:3,sourceLabel:'Google Maps 저장 목록',places,excluded:[]}}));
- await page.route('**/vendor/**',r=>r.abort());
- await page.goto(url);
- await page.locator('#list-tab').click();await page.waitForSelector('.place-card',{timeout:3000});
- assert.equal(await page.locator('.place-card').count(),3);
- assert.equal(await page.locator('.place-card img').count(),0);
- assert.ok(await page.locator('#map-status').textContent());
- await page.locator('#search').fill('없는검색어');assert.equal(await page.locator('.place-card').count(),0);
+}));
+test('browser: real category, search and area filters retain counts and reset',()=>withBrowser(async(browser,url)=>{
+ const page=await browser.newPage({viewport:{width:360,height:800}});
+ await page.goto(url);await page.waitForFunction(()=>document.querySelectorAll('.place-card').length===77);
+ for(const [category,count] of Object.entries(totals)){
+  const chip=page.locator(`[data-category="${category}"]`);
+  assert.equal(await chip.locator('.chip-count').textContent(),String(count));
+  await chip.click();assert.equal(await page.locator('.place-card').count(),count);
+  assert.equal(await page.locator('.category-group').count(),1);
+  assert.equal(await page.locator(`[data-category="${category}"]`).getAttribute('aria-pressed'),'true');
+ }
+ await page.locator('#reset').click();
+ for(const place of data.places){
+  const card=page.locator(`[data-id="${place.id}"]`);
+  assert.equal(await card.locator('h3').textContent(),place.name);
+  assert.ok((await card.locator('.metadata').textContent()).includes(place.kind));
+  assert.equal(await card.locator('a').getAttribute('href'),place.mapsUrl);
+  if(place.note)assert.equal(await card.locator('.note').textContent(),place.note);
+ }
+ assert.doesNotMatch(await page.locator('body').textContent(),/내 숙소|우리 숙소|숙박 예정/);
+ await page.locator('#search').fill('우동 큐타로');assert.equal(await page.locator('.place-card').count(),1);
+ assert.equal(await page.locator('[data-category="음식"] .chip-count').textContent(),'1');
+ await page.locator('#reset').click();
+ const area='신사이바시·호리에';await page.locator('#area').selectOption(area);
+ const areaPlaces=data.places.filter(p=>p.area===area);
+ assert.equal(await page.locator('.place-card').count(),areaPlaces.length);
+ for(const category of Object.keys(totals)){
+  assert.equal(await page.locator(`[data-category="${category}"] .chip-count`).textContent(),String(areaPlaces.filter(p=>p.category===category).length));
+ }
+ await page.locator('[data-category="카페·디저트"]').click();
+ assert.equal(await page.locator('.place-card').count(),areaPlaces.filter(p=>p.category==='카페·디저트').length);
+ await page.locator('#search').fill('없는검색어XYZ');assert.equal(await page.locator('.place-card').count(),0);
  assert.equal(await page.locator('#empty').isVisible(),true);
- await page.locator('#reset').click();assert.equal(await page.locator('.place-card').count(),3);
- await page.locator('#hotel').click();assert.equal(await page.locator('.place-card').count(),1);
- assert.match(await page.locator('.place-card').textContent(),/호텔/);
- await page.locator('#reset').click();await page.locator('#area').selectOption('USJ·베이 에어리어');
- assert.equal(await page.locator('.place-card').count(),1);
- assert.ok(await page.locator('.place-card a').first().getAttribute('href'));
- assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
- assert.deepEqual(errors,[]);await page.close();
- }}finally{await browser.close();await new Promise(r=>server.close(r));}
-});
+ assert.equal(await page.locator('.category-group').count(),0);
+ await page.locator('#empty-reset').click();assert.equal(await page.locator('.place-card').count(),77);
+ assert.equal(await page.locator('#area').inputValue(),'');assert.equal(await page.locator('#search').inputValue(),'');
+ await page.locator('#area').selectOption('USJ·베이 에어리어');assert.equal(await page.locator('.place-card').count(),1);
+ await page.close();
+}));
+test('browser: untrusted text stays text and unsafe URL uses Google Maps',()=>withBrowser(async(browser,url)=>{
+ const page=await browser.newPage();
+ const place={...data.places[0],name:'<img src=x onerror=alert(1)>',note:'<script>alert(1)</script>',mapsUrl:'javascript:alert(1)'};
+ await page.route('**/places.json',r=>r.fulfill({json:{places:[place]}}));
+ await page.goto(url);await page.waitForSelector('.place-card');
+ assert.equal(await page.locator('.place-card img, .place-card script').count(),0);
+ assert.equal(await page.locator('.place-title').textContent(),place.name);
+ assert.equal(await page.locator('.note').textContent(),place.note);
+ assert.match(await page.locator('.place-card a').getAttribute('href'),/^https:\/\/www\.google\.com\/maps\/search\//);
+ await page.close();
+}));
+test('browser: data failure is visible, not a false empty result',()=>withBrowser(async(browser,url)=>{
+ for(const response of [{status:503,body:'Unavailable'},{json:{places:null}}]){
+  const page=await browser.newPage();await page.route('**/places.json',r=>r.fulfill(response));
+  await page.goto(url);await page.waitForFunction(()=>document.querySelector('#data-status').textContent.includes('불러오지 못했습니다'));
+  assert.equal(await page.locator('#data-status').isVisible(),true);
+  assert.equal(await page.locator('#empty').isVisible(),false);await page.close();
+ }
+}));
