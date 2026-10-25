@@ -1,0 +1,775 @@
+{
+  "method": "각 장소 Google Maps에 표시된 소수 리뷰를 읽고 요약했습니다. 전체 리뷰의 대표 표본이 아니며 영업·가격·서비스 상태는 바뀔 수 있습니다.",
+  "places": {
+    "p00": {
+      "description": "키타호리에의 일본식 디저트 가게로, 당고를 팬케이크로 감싼 미타라시마키와 앙마키 등을 맛볼 수 있다.",
+      "reviewSummary": "확인한 리뷰에서는 부드러운 팬케이크와 쫄깃한 당고의 조합을 좋게 평가했다. 다만 갓 구운 온기가 부족했다거나 맛의 인상이 약했다는 의견도 있었다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=5113981153131146759",
+      "rating": 4.2,
+      "reviewCount": 141
+    },
+    "p01": {
+      "description": "니시신사이바시에 있는 미용·성형 클리닉으로, 피부 관련 상담과 진료를 위해 방문하는 곳이다.",
+      "reviewSummary": "확인한 리뷰에서는 의사의 설명과 직원의 친절함, 영어 소통에 대한 만족이 나타났다. 표본 3건에서는 뚜렷한 불만이 없었지만 개인 경험이며 치료 효과나 안전성을 검증하는 근거는 아니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=15917166371115268525",
+      "rating": 4.5,
+      "reviewCount": 579
+    },
+    "p02": {
+      "description": "난바시티 본관의 커피·식료품 매장으로, 커피와 스프레드, 조미료, 과자 등을 둘러보기 좋다.",
+      "reviewSummary": "확인한 리뷰에서는 다양한 식재료와 독특한 간식의 선택 폭을 호평했다. 반면 통로가 좁고 사람이 많아 바구니를 들고 쇼핑하기 불편했다는 의견이 있었다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=11625893590431648582",
+      "rating": 4.1,
+      "reviewCount": 149
+    },
+    "p03": {
+      "description": "혼마치의 우동 전문점으로, 우동과 튀김을 간단히 먹는 작은 입식 매장이다.",
+      "reviewSummary": "확인한 리뷰에서는 면의 탄력과 감칠맛 있는 국물, 튀김과 친절한 응대를 좋게 평가했다. 서서 먹어야 하고 공간이 좁아 편안함은 떨어진다는 의견도 있었다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=10725170122362317696",
+      "rating": 4.3,
+      "reviewCount": 1306
+    },
+    "p04": {
+      "description": "니시신사이바시 1초메의 로손 편의점으로, 주변에서 간단한 식품과 생활용품을 살 때 들르는 곳이다.",
+      "reviewSummary": "확인한 리뷰에서는 직원이 친절했다는 평가가 있었지만, 매장이 작고 상품 선택 폭이 좁다는 의견도 나왔다. 주말 혼잡과 화장실 부재를 언급한 방문 경험이 있었다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=17174501256481329956",
+      "rating": 3.0,
+      "reviewCount": 46
+    },
+    "p05": {
+      "description": "비아 인 신사이바시 1층의 세븐일레븐으로, 간식·음료와 간단한 식사를 구입할 수 있는 편의점이다.",
+      "reviewSummary": "확인한 리뷰에서는 가까운 숙소에서 이용하기 편하고 상품이 좋다는 평가와 계산 직원의 불친절에 대한 불만이 함께 있었다. 표본 3건 중 업종과 맞지 않는 장어 식사 후기는 요약 근거에서 제외했다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=9150950903200531009",
+      "rating": 2.8,
+      "reviewCount": 97
+    },
+    "p06": {
+      "description": "니시신사이바시 2초메의 로손 편의점으로, 간단한 먹거리와 일상용품 구매에 활용할 수 있다.",
+      "reviewSummary": "확인한 리뷰에서는 음식 데우기 요청과 직원 태도에 대한 불만이 있었다. 반대로 짐 배송 서류 작성과 언어 소통을 적극적으로 도와줬다는 경험도 있어 응대 평가는 엇갈렸다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=15034900945241647113",
+      "rating": 2.3,
+      "reviewCount": 52
+    },
+    "p07": {
+      "description": "미도스지 시미즈초 서쪽의 패밀리마트로, 음식과 음료를 구매할 수 있는 편의점이다.",
+      "reviewSummary": "확인한 리뷰에서는 상품 종류와 치킨, 앉아서 이용할 공간을 좋게 평가했으며 혼잡할 수 있다는 언급도 있었다. 거스름돈 처리에 대한 개인의 불만도 있었으나 사실관계는 확인되지 않았다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=7460737169023806408",
+      "rating": 3.3,
+      "reviewCount": 31
+    },
+    "p08": {
+      "description": "신사이바시의 야키니쿠 전문점으로, 여러 부위의 고기와 와규를 무한리필 코스로 즐기는 식당이다.",
+      "reviewSummary": "확인한 리뷰에서는 고기 종류와 품질, 빠르고 친절한 서비스에 만족했다. 다만 불판이 작아 한 번에 굽는 양이 제한되고 붐비는 시간에는 예약이 필요하다는 경험담이 있었다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=16549102120049973239",
+      "rating": 4.5,
+      "reviewCount": 5813
+    },
+    "p09": {
+      "description": "신사이바시의 테이크아웃 디저트 가게로, 커스터드 크림을 채운 작은 슈크림이 중심 메뉴다.",
+      "reviewSummary": "확인한 리뷰에서는 바삭한 겉면과 차갑고 부드러운 크림의 조합을 호평했다. 품절되면 구매하지 못하고 기다릴 수 있다는 언급이 있어 방문 시 재고 확인이 유용하다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=1137459991007430706",
+      "rating": 4.3,
+      "reviewCount": 599
+    },
+    "p10": {
+      "description": "아메리카무라의 츠케멘 전문점으로, 면을 진한 국물에 찍어 먹으며 매운맛 메뉴도 고를 수 있다.",
+      "reviewSummary": "확인한 리뷰에서는 진한 국물과 면의 만족도, 친절한 응대를 좋게 평가했다. 저녁 대기와 현금 주문 경험, 높은 매운맛 단계가 상당히 맵다는 주의점도 언급됐다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=16910069317552716487",
+      "rating": 4.3,
+      "reviewCount": 1415
+    },
+    "p11": {
+      "description": "난바의 야키니쿠 식당으로, 우설과 와규 모둠을 구워 먹는 식사에 어울린다.",
+      "reviewSummary": "확인한 리뷰에서는 부드러운 고기와 세심한 설명, 한국어를 곁들인 친절한 응대를 높게 평가했다. 읽은 3건에서는 뚜렷한 부정 의견을 찾지 못했으며 전체 이용자의 평가를 대표하지는 않는다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=15993333083583894513",
+      "rating": 4.9,
+      "reviewCount": 7645
+    },
+    "p12": {
+      "description": "우메다 시바타의 라멘집으로, 참치절 육수 라멘과 닭백탕 라멘, 다시마 물 츠케멘을 선보인다.",
+      "reviewSummary": "확인한 리뷰에서는 진하면서 지나치게 짜지 않은 국물과 빠른 회전을 좋게 평가했다. 국물 양과 그릇의 좁은 형태가 아쉬웠다는 의견이 있었으며, 한 후기의 난바 위치 설명은 실제 주소와 달라 제외했다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=15017809642381569404",
+      "rating": 4.4,
+      "reviewCount": 895
+    },
+    "p13": {
+      "description": "신세카이의 작은 쿠시카츠 가게로, 꼬치튀김과 도테야키를 곁들여 식사하거나 한잔하기 좋다.",
+      "reviewSummary": "확인한 리뷰에서는 빙어·관자·새우 튀김과 친절한 응대, 다국어 메뉴를 호평했다. 카운터와 계단·화장실이 좁다는 의견과 현금 결제 경험이 있었다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=12257488839777188785",
+      "rating": 4.5,
+      "reviewCount": 258
+    },
+    "p14": {
+      "description": "신세카이의 쿠시카츠 전문점으로, 고기·채소·치즈 꼬치튀김과 도테야키를 맛볼 수 있다.",
+      "reviewSummary": "확인한 리뷰에서는 치즈·채소 꼬치와 부드러운 도테야키를 좋게 평가했다. 고기 꼬치는 평범했다는 의견과 작은 매장의 대기 줄, 관광지 같은 분위기에 대한 언급도 있었다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=17209588581346616951",
+      "rating": 4.1,
+      "reviewCount": 2175
+    },
+    "p15": {
+      "description": "아베노의 대형 쇼핑몰로, 의류·생활 쇼핑과 식료품 구매, 푸드코트 식사를 함께 하기 좋다.",
+      "reviewSummary": "확인한 리뷰에서는 넓고 깨끗한 공간과 가족 편의시설, 지하 식품 매장을 호평했다. 일부 놀이시설에서 이용시간 과금 시작에 대한 안내가 부족했다는 불만도 있었다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=9914050621686113415",
+      "rating": 4.0,
+      "reviewCount": 16883
+    },
+    "p16": {
+      "description": "우메다의 로바타야키 이자카야로, 오픈 그릴에서 구운 해산물과 여러 안주를 즐기는 곳이다.",
+      "reviewSummary": "확인한 리뷰에서는 구이 안주와 이자카야 분위기를 좋게 평가했다. 반면 좁은 좌석, 옷에 배는 냄새, 주문 누락과 느린 응대·청결에 대한 아쉬움도 나타났다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=13511991245235347961",
+      "rating": 3.6,
+      "reviewCount": 2024
+    },
+    "p17": {
+      "description": "우메다의 백화점으로, 패션 쇼핑과 지하 식품·디저트 구매를 함께 할 수 있다.",
+      "reviewSummary": "확인한 리뷰에서는 넓고 쾌적한 쇼핑 공간, 역과 연결된 접근성, 디저트와 포장 식품 선택지를 호평했다. 읽은 3건에서는 뚜렷한 부정 의견이 없었으며 한산했다는 경험은 평일 방문 사례였다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=10435298327912627944",
+      "rating": 4.0,
+      "reviewCount": 18277
+    },
+    "p18": {
+      "description": "신세카이에 있는 지붕 덮인 오래된 상점가로, 음식점과 의류·기념품 가게를 둘러볼 수 있다.",
+      "reviewSummary": "확인한 리뷰에서는 주변 네온과 쓰텐카쿠 풍경, 먹거리와 사진 찍는 재미를 호평했다. 야간 분위기를 활기차게 느낀 의견과 어린이 동반에는 부담스럽다고 느낀 의견이 엇갈렸으며, 주변 신세카이 일대 경험도 섞여 있다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=3245636082261214952",
+      "rating": 4.2,
+      "reviewCount": 1587
+    },
+    "p19": {
+      "description": "우메다 EST 2층의 생활잡화 매장으로, 단순한 디자인의 식기와 주방·생활 소품을 둘러보기 좋다.",
+      "reviewSummary": "확인한 리뷰에서는 간결한 색감과 디자인, 합리적인 가격을 호평했다. 반면 상품 색상 문의에 직원이 성의 없이 답했다는 불만도 있었다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=1398530351924637102",
+      "rating": 4.1,
+      "reviewCount": 361
+    },
+    "p20": {
+      "description": "신사이바시 파르코 7층의 무인양품으로, 의류와 생활용품, 문구·간식 등을 판매한다.",
+      "reviewSummary": "확인한 리뷰에서는 넓고 깨끗한 매장과 문구·의류 선택지를 좋게 평가했다. 인기 헤어 제품 품절과 엘리베이터 대기 불편을 겪었다는 방문 후기도 있었다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=963686821462681423",
+      "rating": 3.9,
+      "reviewCount": 483
+    },
+    "p21": {
+      "description": "도부츠엔마에역 인근의 짐 보관 시설로, 캐리어를 맡기고 주변을 둘러볼 때 활용할 수 있다.",
+      "reviewSummary": "확인한 리뷰에서는 저렴하게 느낀 보관료, 역과 가까운 위치, 친절한 응대와 영어 소통을 호평했다. 읽은 3건에서는 뚜렷한 불만이 없었으며 현재 요금과 보관·배송 조건은 별도 확인이 필요하다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=4700445321891976923",
+      "rating": 5.0,
+      "reviewCount": 488
+    },
+    "p22": {
+      "description": "센니치마에의 야키니쿠 식당으로, 와규 모둠과 두툼한 우설 등을 구워 먹을 수 있다.",
+      "reviewSummary": "확인한 리뷰에서는 고기의 부드러운 식감과 손질, 가격 대비 만족도와 친절한 응대를 높게 평가했다. 읽은 3건에서는 뚜렷한 부정 의견을 찾지 못해 전체 평가로 일반화하기는 어렵다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=17890714577750847509",
+      "rating": 4.7,
+      "reviewCount": 811
+    },
+    "p23": {
+      "description": "쓰텐카쿠 인근의 스시·해산물 식당으로, 니기리 세트와 회를 먹는 식사에 어울린다.",
+      "reviewSummary": "확인한 리뷰에서는 신선하게 느껴진 스시와 빠른 제공, 사진과 다국어가 있는 태블릿 주문을 좋게 평가했다. 문어 초밥이 질겼다는 의견과 물을 따로 요청해야 했다는 경험도 있었다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=17176441973772918911",
+      "rating": 4.4,
+      "reviewCount": 2925
+    },
+    "p25": {
+      "description": "우메다의 패션 중심 쇼핑몰로, 붉은 대관람차와 식당·게임 시설이 함께 있는 곳이다.",
+      "reviewSummary": "확인한 리뷰에서는 관람차에서 보는 도심 야경과 직원의 친절함, 가볍게 쇼핑하고 놀기 좋은 구성을 호평했다. 결제 수단에 대한 주의가 언급됐지만 표본은 과거 탑승 경험이며 현재 운행·결제 조건을 보장하지 않는다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=7311547120174286369",
+      "rating": 4.1,
+      "reviewCount": 12549
+    },
+    "p26": {
+      "description": "신사이바시의 복합 쇼핑몰로, 패션·캐릭터 상품과 식당, 전시 공간을 함께 둘러볼 수 있다.",
+      "reviewSummary": "확인한 리뷰에서는 캐릭터·대중문화 상품, 식당 선택지와 전시 경험을 좋게 평가했다. 반면 특정 입점 매장에서 면세·할인 문의에 불친절하게 응대했다는 후기도 있었다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=4448462780053158731",
+      "rating": 4.3,
+      "reviewCount": 5059
+    },
+    "p27": {
+      "description": "신사이바시 쇼핑가 인근의 3성급 비즈니스 호텔로, 무료 Wi-Fi와 미니 냉장고를 갖춘 객실을 안내합니다.",
+      "reviewSummary": "확인한 Google 리뷰 4건에서는 쇼핑가·도톤보리 접근성과 친절한 직원, 청결한 관리가 호평이었습니다. 객실이 좁고 옆방 소음이 들린다는 의견도 있었으며 외부 예약사이트 후기는 표본에서 제외했습니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 4,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=5051973095457990003",
+      "rating": 3.8,
+      "reviewCount": 1640
+    },
+    "p28": {
+      "description": "히가시신사이바시의 숯불 야키니쿠 전문점입니다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 부드러운 고기와 유쾌하고 친절한 응대가 호평이었습니다. 한국어 메뉴가 편했다는 후기와 실내 흡연이 허용됐다는 경험담도 있어 비흡연자는 참고할 만합니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=4126307042637925340",
+      "rating": 4.9,
+      "reviewCount": 1812
+    },
+    "p29": {
+      "description": "신사이바시의 GAP 의류 매장입니다.",
+      "reviewSummary": "확인한 리뷰 3건에는 할인 구매와 커스터마이징에 만족했다는 평가가 있었지만, 자수 불량을 재작업해도 해결하지 못하고 응대도 아쉬웠다는 상세한 불만도 있었습니다. 할인 조건은 방문 당시의 경험입니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=11641388750629567930",
+      "rating": 3.9,
+      "reviewCount": 369
+    },
+    "p30": {
+      "description": "닛폰바시의 건물 2층에 있는 마사지 매장입니다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 마사지 기술과 깨끗하고 넓은 공간을 좋게 평가했습니다. 압이 매우 강했다는 후기도 있어 강도 조절을 요청했다는 경험을 참고할 만합니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=3595799414638150605",
+      "rating": 4.1,
+      "reviewCount": 134
+    },
+    "p31": {
+      "description": "난바 센니치마에의 소혀 요리 전문점입니다.",
+      "reviewSummary": "확인한 리뷰 3건은 우설의 부드러움과 육즙, 친절한 직원 설명을 공통으로 호평했습니다. 작은 공간이지만 편안했다는 평가가 있었으며 이 표본에서는 뚜렷한 불만이 없었습니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=9712756103779207656",
+      "rating": 4.9,
+      "reviewCount": 4352
+    },
+    "p32": {
+      "description": "기타하마의 커피 전문점으로 매장 이용과 테이크아웃이 가능합니다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 강변 테라스 전망과 커피가 특히 좋은 평가를 받았습니다. 초코 음료는 호불호가 갈렸고, 음식 메뉴가 한정적이거나 실내가 활기차고 시끄럽다는 언급도 있었습니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=3143396422888168986",
+      "rating": 4.4,
+      "reviewCount": 2109
+    },
+    "p33": {
+      "description": "혼마치의 양식 식당으로 햄버그스테이크와 돈가스 정식, 맥주 등을 안내합니다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 돈테키의 두툼한 고기와 푸짐한 식사, 친절한 응대가 호평이었습니다. 대기와 다소 짠 간이 언급됐으며, 독특한 향의 콜라는 취향을 탈 수 있다는 의견이 있었습니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=4232309320572468686",
+      "rating": 4.4,
+      "reviewCount": 2541
+    },
+    "p34": {
+      "description": "도톤보리 건물 4층에 있는 발 마사지 전문점으로 온라인 예약을 안내합니다.",
+      "reviewSummary": "확인한 리뷰 3건은 세심한 마사지와 친절한 응대, 요청에 맞춘 압 조절에 만족했다는 내용이었습니다. 한 리뷰는 동명 매장이 둘이라 예약 지점을 확인해야 한다고 덧붙였습니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=7335104076518877601",
+      "rating": 5.0,
+      "reviewCount": 781
+    },
+    "p35": {
+      "description": "도톤보리의 일본 라멘 전문점으로 매장 식사와 테이크아웃을 안내합니다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 진한 국물과 차슈, 토마토 라멘을 좋게 평가했고 대기 줄이 비교적 빨리 줄었다는 경험도 있었습니다. 먹을수록 짜게 느껴졌거나 높은 매운맛 단계가 부담스러웠다는 의견이 함께 있었습니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=8710420750057842308",
+      "rating": 4.4,
+      "reviewCount": 2193
+    },
+    "p36": {
+      "description": "그랜드프론트 오사카 남관 7층의 장어 요리 전문점입니다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 겉이 바삭하고 속이 부드러운 장어와 여러 방식으로 먹는 히츠마부시, 친절한 응대가 호평이었습니다. 작은 장어 분량을 선택한 뒤 양이 아쉬웠다는 후기도 있었습니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=4741083936034205244",
+      "rating": 4.5,
+      "reviewCount": 1186
+    },
+    "p37": {
+      "description": "우메다 북쪽 도요사키의 돈카츠 전문점입니다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 부드러운 돼지고기와 가벼운 튀김옷, 깔끔한 매장 분위기를 좋게 평가했습니다. 예약을 권하는 의견과 여러 명이 앉을 테이블이 적다는 경험담이 있었습니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=13977859540951554815",
+      "rating": 4.7,
+      "reviewCount": 2267
+    },
+    "p38": {
+      "description": "난바 지하층의 오코노미야키 전문점으로 오픈 키친과 카운터 좌석을 갖추고 있습니다.",
+      "reviewSummary": "확인한 리뷰 3건은 오코노미야키·야키소바의 맛과 눈앞에서 조리하는 경험, 친절한 안내를 호평했습니다. 좌석이 적고 한 리뷰에서는 1시간 반을 기다렸다고 해 대기 부담이 언급됐습니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=3751223342558892528",
+      "rating": 4.7,
+      "reviewCount": 1365
+    },
+    "p39": {
+      "description": "기타신치의 암소 전문 야키니쿠 식당입니다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 부드러운 와규와 우설, 세심한 설명과 편안한 분위기가 호평이었습니다. 한 리뷰는 물수건과 호출벨이 없어 아쉬웠다고 했고, 혼잡한 저녁에는 예약을 권하는 의견도 있었습니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=10933748621735965834",
+      "rating": 4.8,
+      "reviewCount": 2702
+    },
+    "p40": {
+      "description": "우메다 도야마초의 스시 전문점으로 히가시나카도리 상점가에 있습니다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 두툼한 회와 가격 대비 만족도, 아이를 배려하는 친절한 응대가 좋은 평가를 받았습니다. 저녁 만석으로 기다린 경험과 이른 시간 방문을 권하는 의견도 있었습니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=15268466371233689553",
+      "rating": 4.5,
+      "reviewCount": 786
+    },
+    "p41": {
+      "description": "후쿠시마의 일본식 카레 전문점으로 매장 식사와 테이크아웃을 안내합니다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 달콤하고 진한 카레, 바삭한 튀김 토핑과 한국어 주문기의 편리함이 호평이었습니다. 특별하기보다는 깔끔한 기본 맛이라는 평가도 있었고, 현금만 받았다는 경험담이 있었습니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=12541915007551734496",
+      "rating": 4.4,
+      "reviewCount": 1132
+    },
+    "p42": {
+      "description": "신우메다 쇼쿠도가이 1층의 다코야키 전문점으로 파와 마요네즈를 얹는 메뉴를 안내합니다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 풍성한 파와 부드러운 속, 큼직한 문어를 좋게 평가했습니다. 줄이 빨리 줄었다는 의견도 있지만 개점 직후 약 30분 기다렸다는 경험이 있어 대기 가능성이 언급됩니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=11352409233880323705",
+      "rating": 4.2,
+      "reviewCount": 4651
+    },
+    "p43": {
+      "description": "난바에서 팬케이크와 파르페를 내는 카페로 원목 중심의 실내를 갖추고 있습니다.",
+      "reviewSummary": "확인한 리뷰 3건 모두 폭신하고 부드러운 팬케이크를 호평했습니다. 입장 대기뿐 아니라 착석 후 조리 시간도 길었다는 의견이 있었고, 한 리뷰는 음식이 나오기까지 거의 한 시간 걸렸다고 했습니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=14569132032462000222",
+      "rating": 4.0,
+      "reviewCount": 2119
+    },
+    "p44": {
+      "description": "히가시신사이바시의 스시 전문점으로 매장 식사와 테이크아웃을 안내합니다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 합리적인 가격과 넉넉한 생선, 친절한 응대가 좋은 평가를 받았습니다. 맛이 특별하기보다는 괜찮은 스시집 수준이라는 의견도 있었으나 표본에서는 직접적인 불친절 경험은 보고되지 않았습니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=7306810702702234395",
+      "rating": 3.9,
+      "reviewCount": 448
+    },
+    "p45": {
+      "description": "구로몬시장 안에 있는 식료품점입니다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 도시락·스시·과일 등 선택 폭과 가격 대비 만족도, 여행 중 식료품을 사기 편한 점이 호평이었습니다. 시장의 즉석 구이와 달리 준비된 식품을 사는 곳이라는 설명도 있었습니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=16495178913715532052",
+      "rating": 4.0,
+      "reviewCount": 1428
+    },
+    "p46": {
+      "description": "오사카성의 다층 천수각 안에 있는 역사 박물관입니다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 성벽과 해자, 천수각 전망을 좋게 평가했습니다. 현장 발권 대기와 계단 이동 부담이 언급됐으며 엘리베이터 이용 조건에 관한 경험담은 서로 달라 현장 확인이 필요합니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=4831865609044200129",
+      "rating": 4.5,
+      "reviewCount": 5906
+    },
+    "p47": {
+      "description": "호젠지 골목에 자리한 장어 요리 전문점입니다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 장어의 구운 식감과 히츠마부시, 전통적인 실내 분위기를 호평했습니다. 한 리뷰는 6월 방문 당시 1층이 매우 더웠다고 지적했습니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=13861163613513056487",
+      "rating": 4.6,
+      "reviewCount": 987
+    },
+    "p48": {
+      "description": "아베노 하루카스 58~60층의 전망 공간으로 야외 아트리움과 카페를 갖추고 있습니다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 360도 전망과 야경, 야외 공간을 특히 좋게 평가했습니다. 16층에서 전용 엘리베이터로 갈아타야 한다는 경험담이 있었으며 이 표본에서는 뚜렷한 불만은 없었습니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=17457951089637678730",
+      "rating": 4.6,
+      "reviewCount": 23985
+    },
+    "p49": {
+      "description": "신세카이의 랜드마크 타워로 일반에 개방된 전망대를 갖추고 있습니다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 주변 거리의 활기와 전망, 야외 체험을 즐겼다는 평가가 있었습니다. 긴 줄 때문에 입장을 포기한 경험과 높이가 압도적이지 않아 긴 대기까지 감수할 정도는 아니라는 의견도 있었습니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=16558556426972448087",
+      "rating": 4.1,
+      "reviewCount": 44227
+    },
+    "p50": {
+      "description": "우메다 시바타의 지하층에 있는 규카츠 식당입니다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 바삭한 겉면과 부드러운 소고기, 직접 추가로 구워 먹는 방식과 친절한 서비스가 호평이었습니다. 특상 메뉴 가격을 고민했지만 맛에는 만족했다는 후기도 있었습니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=7463907006121249034",
+      "rating": 4.8,
+      "reviewCount": 10306
+    },
+    "p51": {
+      "description": "덴진바시스지 상점가 5초메의 스시 전문점입니다.",
+      "reviewSummary": "확인한 리뷰 3건 중 두 건은 맛과 가격 대비 만족도, 친절한 응대를 호평했습니다. 다른 한 건은 긴 대기 뒤 품절과 비싼 대체 메뉴, 거스름돈 누락을 겪었다고 했으며 저녁 품절은 긍정 리뷰에서도 언급됐습니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=6656831565755969603",
+      "rating": 4.2,
+      "reviewCount": 3866
+    },
+    "p52": {
+      "description": "호젠지요코초의 로바타야키 이자카야로 개방형 그릴 주변에 카운터가 있습니다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 눈앞에서 굽는 해산물과 꼬치, 나무 주걱으로 음식을 건네는 방식과 활기찬 분위기가 호평이었습니다. 이 표본에서는 뚜렷한 불만이 없었습니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=18075603667097154303",
+      "rating": 4.0,
+      "reviewCount": 1553
+    },
+    "p53": {
+      "description": "신사이바시의 라멘 전문점으로, 메뉴에 쇼유라멘과 교자가 보인다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 친절한 응대, 깔끔한 국물과 마제소바를 좋게 평가했다. 한 리뷰는 3인 이상이 함께 앉기에는 좌석 여유가 적다고 언급했다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=12008077510785065735",
+      "rating": 4.8,
+      "reviewCount": 3425
+    },
+    "p54": {
+      "description": "화이티 우메다 지하상가의 스시 이자카야로, 초밥과 튀김·오뎅 등의 안주를 함께 낸다.",
+      "reviewSummary": "표본 리뷰 3건에서는 버터장어초밥과 친절한 서비스가 호평을 받았다. 다만 한 리뷰는 접근성과 빠른 응대는 좋지만 초밥 맛 자체는 평범하다고 평가했다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=8899623872554397019",
+      "rating": 4.1,
+      "reviewCount": 784
+    },
+    "p55": {
+      "description": "신사이바시 ZERO GATE에 있는 ZARA 매장으로, 의류·신발·액세서리를 판매한다.",
+      "reviewSummary": "확인한 리뷰 3건은 매장 인테리어, 상품 선택 폭과 직원 응대를 긍정적으로 평가했다. 이 표본에는 뚜렷한 불만이 없지만 전체 리뷰를 대표하는 평가는 아니다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=13098287634535706337",
+      "rating": 3.4,
+      "reviewCount": 107
+    },
+    "p56": {
+      "description": "난바 미나토마치의 식료품점으로, 마루이토 난바 빌딩 지하와 1층에 있다.",
+      "reviewSummary": "표본 리뷰 3건 중 두 건은 초밥 등 즉석식품과 장보기 편의성을 좋게 평가했다. 다른 한 건은 벤텐초 지점과 비교해 상품 선택 폭이 좁다고 느꼈다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=14645555347964020357",
+      "rating": 4.1,
+      "reviewCount": 3047
+    },
+    "p57": {
+      "description": "난바나카의 규카츠 전문점으로, 건물 2층에서 식사하는 곳이다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 규카츠 맛과 화로 연료 추가 응대가 긍정적으로 언급됐지만, 평범하거나 다소 느끼하다는 의견도 있었다. 좁고 더운 계단 대기 공간과 긴 대기 시간이 공통적인 주의점이었다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=5283956538724007843",
+      "rating": 4.5,
+      "reviewCount": 3385
+    },
+    "p58": {
+      "description": "우메다 한큐 그랜드 빌딩 1층의 테이크아웃 패스트리점으로, 브륄레 밀푀유와 구움과자를 판매한다.",
+      "reviewSummary": "표본 리뷰 3건 모두 바삭한 페이스트리와 과하게 달지 않은 커스터드를 좋게 평가했다. 한 리뷰는 가격 부담, 큰 분량과 부스러기가 많이 떨어져 먹기 불편한 점도 언급했다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=4885162933966756039",
+      "rating": 4.5,
+      "reviewCount": 1050
+    },
+    "p59": {
+      "description": "난바 미나토마치에 있는 슈퍼마켓으로, 여행 중 식료품과 간식을 구매할 수 있는 곳이다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 깨끗한 매장과 저렴하게 느껴진 가격이 호평이었다. 다만 한 리뷰는 계산이 느린 편이라고 했고, 다른 리뷰는 개점 행사 이후 가격이 조금 올랐다고 언급했다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=17352199761410200185",
+      "rating": 4.3,
+      "reviewCount": 168
+    },
+    "p60": {
+      "description": "신사이바시의 와규 야키니쿠점으로, 메뉴에 두껍게 썬 우설이 있으며 매장 소개에서는 와규 등심 코스와 단품을 안내한다.",
+      "reviewSummary": "표본 리뷰 3건은 고기 품질과 직원 응대를 높게 평가했고, 파를 올린 우설과 코스 요리도 호평이었다. 한 리뷰는 개별 공간이 아늑하지만 옆방 소리와 그릴 소음이 들린다고 언급했다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=5541746520092888503",
+      "rating": 4.8,
+      "reviewCount": 2257
+    },
+    "p61": {
+      "description": "해산물·농산물·길거리 음식과 기념품을 판매하는 닛폰바시의 시장이다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 다양한 먹거리와 참치·성게 등 해산물이 긍정적으로 언급됐다. 혼잡과 인기 품목 소진을 피하려 일찍 방문하라는 의견, 중심부와 주변의 가격을 비교하라는 조언이 있었다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=12402117845945925953",
+      "rating": 4.1,
+      "reviewCount": 21339
+    },
+    "p62": {
+      "description": "KITTE 오사카에 있는 스시점으로, 메뉴에 참치·흰살생선 모둠과 새우회 등이 보인다.",
+      "reviewSummary": "표본 리뷰 3건은 참치 초밥과 음식 맛을 좋게 평가했으며 빠른 제공과 한국어 메뉴도 언급했다. 한 리뷰는 애매한 시간에도 사람이 많고 좌석이 편하지 않았다고 했다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=3172676741991144345",
+      "rating": 4.0,
+      "reviewCount": 265
+    },
+    "p63": {
+      "description": "도톤보리 미도스지의 돈키호테 할인점으로, 식료품·장난감·생활용품 등을 판매한다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 다른 도톤보리 점포보다 덜 붐빈다는 경험과 다양한 상품을 장점으로 꼽았다. 일부 품목의 가격과 면세 계산대 혼잡을 지적한 리뷰가 있으며, 의약품 판매 시간은 별도 확인이 필요하다는 경험담도 있었다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=46944565323644907",
+      "rating": 3.8,
+      "reviewCount": 4365
+    },
+    "p64": {
+      "description": "난바나카의 튀김 정식 전문점으로, 메뉴에 새우·채소 튀김과 정식이 보인다.",
+      "reviewSummary": "표본 리뷰 3건 모두 갓 튀긴 바삭한 튀김과 명란 제공을 좋게 평가했다. 작은 매장이라 대기가 길어질 수 있다는 의견과 현금 결제를 준비하라는 경험담이 있었다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=7310639894391802065",
+      "rating": 4.5,
+      "reviewCount": 325
+    },
+    "p65": {
+      "description": "기타신치의 와규 요리점으로, 매장 소개에서 우설·안창살 구이와 샤부샤부·스키야키를 안내한다.",
+      "reviewSummary": "확인한 리뷰 3건은 고기 품질과 맛을 높게 평가했고, 코스 분위기와 하라미 육회 정식도 호평이었다. 이 소수 표본에서는 뚜렷한 불만이 확인되지 않았다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=9267753754428094783",
+      "rating": 4.5,
+      "reviewCount": 15
+    },
+    "p66": {
+      "description": "도톤보리의 라멘 전문점으로, 메뉴에 기본 라멘과 차슈라멘이 있다.",
+      "reviewSummary": "표본 리뷰 3건에서는 가격 대비 만족도와 차슈, 빠른 응대를 좋게 본 의견이 있었다. 국물은 만족스럽다는 평가와 깊이·농도가 부족하다는 평가로 갈렸고, 강한 양념이 국물 맛을 덮는다는 지적도 있었다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=12313835939676469871",
+      "rating": 3.8,
+      "reviewCount": 4462
+    },
+    "p67": {
+      "description": "한큐 우메다 본점 지하 1층의 일본 디저트 매장으로, 과일 다이후쿠를 판매한다.",
+      "reviewSummary": "확인한 리뷰 3건은 과일의 맛과 부드러운 떡을 좋게 평가했으며 딸기·멜론·망고가 언급됐다. 한 리뷰는 지하 디저트 코너의 많은 인파가 정신없다고 느꼈다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=3078132907549391501",
+      "rating": 4.4,
+      "reviewCount": 341
+    },
+    "p68": {
+      "description": "미나미모리마치에 있는 스시점으로, 메뉴에 성게 니기리와 초밥 모둠이 보인다.",
+      "reviewSummary": "표본 리뷰 3건은 신선한 생선과 참치·장어 초밥을 높게 평가했다. 이전 후 작은 매장과 느린 회전 때문에 오래 기다렸다는 경험이 반복돼 대기 시간 여유가 필요해 보인다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=2142186676854735752",
+      "rating": 4.3,
+      "reviewCount": 72
+    },
+    "p69": {
+      "description": "닛폰바시의 꼬치구이 전문점으로, 메뉴에 츠쿠네와 닭날개가 있다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 꼬치 맛과 한국인 방문객의 이용 편의성이 긍정적으로 언급됐다. 반면 음식 제공이 매우 느렸다는 경험과 조리 과정의 위생이 마음에 걸렸다는 개인적인 지적도 있었다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=6805601111673117005",
+      "rating": 4.3,
+      "reviewCount": 722
+    },
+    "p70": {
+      "description": "오사카역 앞 제3빌딩 지하 1층에 있는 스시 이자카야다.",
+      "reviewSummary": "표본 리뷰 3건에서는 참치마키와 장어, 합리적인 가격 및 빠른 제공이 호평이었다. 반면 한 리뷰는 초밥 크기와 성게·연어알 품질에 불만을 보였고, 다른 리뷰들은 대기와 시끌벅적한 주변 분위기를 언급했다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=9258516941446887028",
+      "rating": 4.1,
+      "reviewCount": 1374
+    },
+    "p71": {
+      "description": "영화·캐릭터를 테마로 한 놀이기구와 공연을 즐기는 테마파크로, 슈퍼 닌텐도 월드와 해리포터 관련 시설 등이 있다.",
+      "reviewSummary": "확인한 리뷰 3건은 해리포터 구역과 워터월드, 놀이기구의 완성도를 좋게 평가했다. 많은 인파와 긴 대기 시간이 반복적으로 지적됐고, 기념품 등 추가 지출 부담도 언급됐다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=3892796888607511210",
+      "rating": 4.5,
+      "reviewCount": 156786
+    },
+    "p72": {
+      "description": "우메다 소네자키의 스시점으로, 메뉴에 참치와 굴튀김 등이 보인다.",
+      "reviewSummary": "표본 리뷰 3건 모두 참치 중뱃살·장어와 친절한 응대를 높게 평가했다. 한 리뷰는 와사비가 강하게 느껴져 매운맛에 약하면 주문 때 조절을 요청하라고 제안했다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=6042283598424267075",
+      "rating": 4.5,
+      "reviewCount": 984
+    },
+    "p73": {
+      "description": "나카노시마에 있는 공립 도서관으로, 건물 안에 카페도 있다.",
+      "reviewSummary": "확인한 리뷰 3건은 고풍스러운 건축과 역사적인 분위기, 주변 산책 환경을 좋게 평가했다. 한 리뷰는 내부 카페 대기가 길어 이용하지 못했다고 언급했다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=13370939782163536299",
+      "rating": 4.3,
+      "reviewCount": 721
+    },
+    "p74": {
+      "description": "기타하마의 커피 전문점으로, 메뉴에 카페라테와 치즈케이크가 보인다.",
+      "reviewSummary": "표본 리뷰 3건은 커피 맛과 강을 바라보는 자리, 차분한 분위기를 호평했다. 한 리뷰는 좁은 계단과 지하 화장실 이용 시 주의가 필요하다고 언급했다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=300719921601020371",
+      "rating": 4.3,
+      "reviewCount": 489
+    },
+    "p75": {
+      "description": "미나미큐호지마치의 카페로, 커피와 당근케이크·카눌레·마들렌 등의 구움과자를 판매한다.",
+      "reviewSummary": "확인한 리뷰 3건에서는 커피, 브런치와 세련된 분위기가 호평이었다. 커피 제공이 음식보다 늦었다는 경험과 주변 평균보다 가격이 높게 느껴졌다는 의견도 있었다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=1666110676257465500",
+      "rating": 4.8,
+      "reviewCount": 456
+    },
+    "p76": {
+      "description": "옛 은행 건물인 사카이스지 클럽에 있는 카페로, 메뉴에 토스트와 아포가토가 보인다.",
+      "reviewSummary": "표본 리뷰 3건은 옛 은행의 건축과 빵·디저트를 좋게 평가했다. 일부는 직원 응대가 무뚝뚝하거나 설거지·음악 소리가 시끄러웠다고 했고, 디저트가 달다는 의견도 있었다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=6971514807835091645",
+      "rating": 3.7,
+      "reviewCount": 949
+    },
+    "p77": {
+      "description": "덴가차야의 야키니쿠 전문점으로, 메뉴에 우설과 안창살이 있다.",
+      "reviewSummary": "확인한 리뷰 3건 모두 고기 맛과 가격 대비 만족도를 좋게 평가했고 친절한 응대도 호평이었다. 한 리뷰는 도심에서 조금 떨어진 위치와 손님이 많을 때 고기 제공이 늦어지는 점을 언급했다.",
+      "reviewStatus": "reviewed",
+      "sampleSize": 3,
+      "checkedAt": "2026-10-25",
+      "sourceUrl": "https://www.google.com/maps?cid=12710750973662318887",
+      "rating": 4.7,
+      "reviewCount": 470
+    }
+  }
+}

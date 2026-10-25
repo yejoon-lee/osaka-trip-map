@@ -1,5 +1,22 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+test('Haversine distance validates coordinates and handles zero, symmetry and antipodes', async () => {
+ const {distanceMeters,formatDistance,sortByDistance} = await import('../core.mjs');
+ assert.equal(typeof distanceMeters,'function');
+ const origin={lat:0,lng:0}, east={lat:0,lng:1};
+ assert.equal(distanceMeters(origin,origin),0);
+ assert.ok(Math.abs(distanceMeters(origin,east)-111195.08)<1);
+ assert.equal(distanceMeters(origin,east),distanceMeters(east,origin));
+ assert.ok(Math.abs(distanceMeters(origin,{lat:0,lng:180})-Math.PI*6371008.8)<1);
+ for(const value of [null,{lat:91,lng:0},{lat:0,lng:NaN},{lat:'0',lng:0}]) assert.equal(distanceMeters(origin,value),null);
+ assert.equal(formatDistance(50),'직선 50 m');
+ assert.equal(formatDistance(1500),'직선 1.5 km');
+ assert.equal(formatDistance(null),'거리 미확인');
+ const points=[{id:'z',...east},{id:'b',...origin},{id:'a',...origin},{id:'x'}];
+ assert.deepEqual(sortByDistance(points,origin).map(p=>p.id),['a','b','z','x']);
+ assert.deepEqual(sortByDistance(points,null),points);
+ assert.equal(points[0].id,'z');
+});
 const fixture = [
  {id:'a',name:'라멘 A',originalName:'Ramen A',category:'음식',area:'난바',kind:'라멘',note:'현금',lat:34.66,lng:135.50},
  {id:'b',name:'커피 B',category:'카페·디저트',area:'우메다',kind:'커피',note:'',lat:34.70,lng:135.50},
