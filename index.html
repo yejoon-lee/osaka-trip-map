@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f2eb"><meta name="description" content="저장한 오사카 장소를 음식, 카페, 쇼핑, 관광, 호텔, 편의·서비스별로 탐색하는 지도.">
+<title>오사카 장소 지도</title>
+<link rel="stylesheet" href="vendor/leaflet.css"><link rel="stylesheet" href="vendor/MarkerCluster.css"><link rel="stylesheet" href="vendor/MarkerCluster.Default.css"><link rel="stylesheet" href="styles.css">
+<script defer src="vendor/leaflet.js"></script><script defer src="vendor/leaflet.markercluster.js"></script><script type="module" src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#results">장소 목록으로 건너뛰기</a>
+<header class="masthead"><div class="brand"><span class="brand-mark" aria-hidden="true">大阪</span><div><h1>오사카 <span>장소 지도</span></h1><p>OSAKA · SAVED PLACES</p></div></div><button id="hotel" class="quiet" type="button">호텔 보기 <span aria-hidden="true">↗</span></button></header>
+<section class="filters" aria-label="장소 필터">
+<div class="search-row"><label class="search-wrap"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="이름, 종류, 메모 검색" aria-label="장소 검색" autocomplete="off"></label><label class="area-wrap"><span class="sr-only">지역</span><select id="area"><option value="">모든 지역</option></select></label><button id="reset" class="quiet" type="button">초기화</button></div>
+<div id="categories" class="chips" aria-label="카테고리"></div>
+</section>
+<main class="explore">
+<section class="map-panel" aria-label="장소 지도"><div class="map-toolbar"><span class="map-label">오사카 둘러보기</span><div><button id="fit" type="button">결과 맞춤</button><button id="full" type="button">전체 범위</button><button id="locate" type="button" aria-label="현재 위치 표시">내 위치</button></div></div><div id="map" aria-label="오사카 지도" tabindex="0"></div><p id="map-status" class="map-status" role="status" hidden></p><a class="mobile-list-link" href="#results">장소 목록 ↓</a></section>
+<section id="results" class="results" tabindex="-1" aria-label="장소 목록"><div class="results-heading"><h2>저장한 장소 <span id="count" aria-live="polite">—</span></h2><span id="filter-label">전체</span></div><div id="list" class="place-list"></div><div id="empty" class="empty" hidden><h3>검색 결과가 없어요</h3><p>검색어를 바꾸거나 필터를 초기화해 보세요.</p><button id="empty-reset" type="button">필터 초기화</button></div><p id="data-status" role="status">장소를 불러오는 중…</p><footer><p>출처 · <span id="source">Google Maps 저장 목록</span></p><p>저장 목록의 스냅샷입니다. 메모에 담긴 가격·재고·영업 정보는 실시간 정보가 아닙니다. 방문 전 Google Maps에서 확인하세요.</p></footer></section>
+</main><noscript><p>지도를 탐색하려면 JavaScript를 켜 주세요.</p></noscript>
+</body></html>
