@@ -18,12 +18,35 @@ function links(p, className = 'place-links') {
 }
 let map, clusters, locationMarker;
 const markers = new Map();
+function setView(view) {
+  const isMap = view === 'map';
+  $('map-view').hidden = !isMap;
+  $('results').hidden = isMap;
+  for (const name of ['map','list']) {
+    const active = name === view;
+    $(name+'-tab').setAttribute('aria-selected',String(active));
+    $(name+'-tab').tabIndex = active ? 0 : -1;
+  }
+  if (isMap && map) map.invalidateSize({pan:false});
+}
+for (const name of ['map','list']) {
+  $(name+'-tab').addEventListener('click',()=>setView(name));
+  $(name+'-tab').addEventListener('keydown',e=>{
+    if (!['ArrowLeft','ArrowRight','Home','End'].includes(e.key)) return;
+    e.preventDefault();
+    const next=e.key==='Home'?'map':e.key==='End'?'list':name==='map'?'list':'map';
+    setView(next);$(next+'-tab').focus();
+  });
+}
+document.querySelector('.skip').addEventListener('click',e=>{e.preventDefault();setView('list');$('results').focus({preventScroll:true});});
 function highlight(p, reveal = false) {
   selected = p.id;
   for (const card of $('list').children) {
     card.dataset.selected = String(card.dataset.id === selected);
-    if (reveal && card.dataset.id === selected) {
-      if (matchMedia('(min-width:701px)').matches) $('results').scrollTo({top:card.offsetTop-$('results').offsetTop-65,behavior:'auto'});
+    if (reveal && !$('results').hidden && card.dataset.id === selected) {
+      const list=$('results');
+      const top=card.getBoundingClientRect().top-list.getBoundingClientRect().top+list.scrollTop;
+      list.scrollTo({top:top-list.querySelector('.results-heading').offsetHeight,behavior:'auto'});
     }
   }
 }
@@ -31,7 +54,8 @@ function selectPlace(p) {
   highlight(p);
   const marker = markers.get(p.id);
   if (!map || !marker) return;
-  if (matchMedia('(max-width:700px)').matches) window.scrollTo({top:document.querySelector('.map-panel').offsetTop,behavior:'auto'});
+  setView('map');
+  $('map').focus({preventScroll:true});
   clusters.zoomToShowLayer(marker,()=>{if(selected===p.id)marker.openPopup();});
 }
 function fit(full = false) {
@@ -51,10 +75,11 @@ function drawMarkers() {
     popup.append(links(p,'popup-links'));
     const reveal=node('button','목록에서 보기','popup-list');reveal.type='button';
     reveal.addEventListener('click',()=>{
-      highlight(p,true);const card=[...$('list').children].find(c=>c.dataset.id===p.id);
-      if(card){if(matchMedia('(max-width:700px)').matches)window.scrollTo({top:card.getBoundingClientRect().top+scrollY-12,behavior:'auto'});card.querySelector('button').focus({preventScroll:true});}
+      setView('list');highlight(p,true);
+      const card=[...$('list').children].find(c=>c.dataset.id===p.id);
+      card?.querySelector('button').focus({preventScroll:true});
     });popup.append(reveal);
-    marker.bindPopup(popup);marker.on('click',()=>highlight(p,true));marker.on('popupopen',()=>highlight(p,true));
+    marker.bindPopup(popup);marker.on('click',()=>highlight(p));marker.on('popupopen',()=>highlight(p));
     markers.set(p.id,marker);clusters.addLayer(marker);
   }
   fit();
@@ -67,7 +92,7 @@ function setupMap() {
     tiles.on('tileerror',()=>mapStatus('배경 지도를 불러오지 못했습니다. 장소 목록과 Google Maps 링크는 계속 사용할 수 있어요.'));
     clusters=L.markerClusterGroup({maxClusterRadius:42,spiderfyOnMaxZoom:true,showCoverageOnHover:false,animate:!matchMedia('(prefers-reduced-motion:reduce)').matches}).addTo(map);
     mapStatus('');
-    new ResizeObserver(()=>map.invalidateSize({pan:false})).observe($('map'));
+    new ResizeObserver(()=>{if (!$('map-view').hidden) map.invalidateSize({pan:false});}).observe($('map'));
   } catch {
     mapStatus('지도를 불러오지 못했습니다. 장소 목록과 Google Maps 링크를 이용해 주세요.');
     for(const id of ['fit','full','locate'])$(id).disabled=true;
@@ -122,7 +147,7 @@ $('area').addEventListener('change',e=>{filters.area=e.target.value;render();});
 $('reset').addEventListener('click',reset);$('empty-reset').addEventListener('click',reset);
 $('hotel').addEventListener('click',()=>{Object.assign(filters,{query:'',category:'호텔',area:''});$('search').value='';$('area').value='';render();if(visible[0])selectPlace(visible[0]);});
 function mapStatus(text) {$('map-status').textContent=text;$('map-status').hidden=!text;}
-mapStatus('지도를 불러오지 못했습니다. 아래 장소 목록과 Google Maps 링크를 이용해 주세요.');
+mapStatus('지도를 불러오지 못했습니다. 목록 탭과 Google Maps 링크를 이용해 주세요.');
 async function start(){
   try{
     const response=await fetch('./places.json');if(!response.ok)throw Error('Data unavailable');
